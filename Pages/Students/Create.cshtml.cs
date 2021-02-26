@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models;
+using ContosoUniversity.ViewModels;
 
 namespace ContosoUniversity.Pages.Students
 {
@@ -25,7 +26,7 @@ namespace ContosoUniversity.Pages.Students
         }
 
         [BindProperty]
-        public Student Student { get; set; }
+        public StudentVM StudentVM { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,9 +36,9 @@ namespace ContosoUniversity.Pages.Students
                 return Page();
             }
 
-            _context.Students.Add(Student);
+            var entry = _context.Add(new Student());
+            entry.CurrentValues.SetValues(StudentVM);
             await _context.SaveChangesAsync();
-
             return RedirectToPage("./Index");
         }
     }
