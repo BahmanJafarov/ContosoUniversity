@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ContosoUniversity.ViewModels
+namespace ContosoUniversity.Models.SchoolViewModels
 {
     public class StudentVM
     {

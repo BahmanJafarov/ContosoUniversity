@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models;
-using ContosoUniversity.ViewModels;
+using ContosoUniversity.Models.SchoolViewModels;
 
 namespace ContosoUniversity.Pages.Students
 {
