@@ -11,16 +11,16 @@ namespace ContosoUniversity.Pages.Instructors
 {
     public class InstructorCoursesPageModel : PageModel
     {
-        public List<AssignedCourseData> AssignedDataCourseList;
+        public List<AssignedCourseData> AssignedCourseDataList;
 
         public void PopulateAssignedCourseData(SchoolContext context, Instructor instructor)
         {
             var allCourses = context.Courses;
             var instructorCourses = new HashSet<int>(instructor.CourseAssignments.Select(c => c.CourseID));
-            AssignedDataCourseList = new List<AssignedCourseData>();
+            AssignedCourseDataList = new List<AssignedCourseData>();
             foreach (var course in allCourses)
             {
-                AssignedDataCourseList.Add(new AssignedCourseData
+                AssignedCourseDataList.Add(new AssignedCourseData
                 {
                     CourseID = course.CourseID,
                     Title = course.Title,
